@@ -62,6 +62,8 @@ public class ConsolaOlimpicos
 					ejecutarMedallistasPorNacionYGenero();
 				else if (opcion_seleccionada == 12 && calculadora != null)
 					ejecutarPorcentajeMedallistas();
+				else if (opcion_seleccionada == 14 && calculadora != null)
+					ejecutarPaisAtleta();
 				else if (opcion_seleccionada == 13)
 				{
 					System.out.println("Saliendo de la aplicación ...");
@@ -103,6 +105,7 @@ public class ConsolaOlimpicos
 		System.out.println("11. Consultar los medallistas por país y género");
 		System.out.println("12. Consultar el porcentaje de atletas que son medallistas");
 		System.out.println("13. Salir de la aplicación\n");
+		System.out.println("14. Consultar el pais de un atleta dado\n");
 	}
 
 	/**
@@ -427,6 +430,14 @@ public class ConsolaOlimpicos
 	 * @param args Parámetros introducidos en la línea de comandos al invocar la
 	 *             aplicación
 	 */
+	
+	private void ejecutarPaisAtleta()
+	{
+		String elAtleta = input("Ingrese el atleta que desea consultar");
+		String respuesta = calculadora.buscarPaisDeAtleta(elAtleta);
+		System.out.println("El pais de "+elAtleta+" es "+respuesta);
+	}
+	
 	public static void main(String[] args)
 	{
 		ConsolaOlimpicos consola = new ConsolaOlimpicos();

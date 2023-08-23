@@ -427,6 +427,17 @@ public class CalculadoraEstadisticas
 		}
 		return elAtleta;
 	}
+	
+	public String buscarPaisDeAtleta(String AtletaBuscado)
+	{
+		Pais pais = null;
+		Atleta elAtleta = buscarAtleta(AtletaBuscado);
+		if (elAtleta != null) {
+			pais = elAtleta.darPais();
+		}
+	return pais.darNombre();
+	}
+	
 
 	/**
 	 * Retorna una colección con los nombres de los eventos
